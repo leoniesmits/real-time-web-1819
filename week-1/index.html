@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Socket.IO chat</title>
-    <link rel="stylesheet" type="text/css" href="./public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   <body>
     <ul id="messages"></ul>
@@ -27,10 +27,9 @@
 			socket.on('chat message', function(msg, rhymeArray) {
                 var newLi = document.createElement("li")
                 newLi.textContent = msg;
+                console.log(msg)
                 document.querySelector('#messages').append(newLi);
-                
-                console.log(rhymeArray)
-                // var rhymeArray = rhymeWords.forEach(function(words) {
+                                // var rhymeArray = rhymeWords.forEach(function(words) {
                 //     console.log(words)
                 //     newRhymes.textContent = words
                 // })

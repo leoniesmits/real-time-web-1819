@@ -9,6 +9,7 @@
   </head>
   <body>
     <ul id="messages"></ul>
+    <ul id="rhymewords"></ul>
     <form action="">
       <input id="m" autocomplete="off" /><button>Send</button>
     </form>
@@ -21,12 +22,23 @@
 				socket.emit('chat message', document.querySelector('#m').value);
 				document.querySelector('#m').value = "";
 				return false;
-			});
-			socket.on('chat message', function(msg) {
-				var newLi = document.createElement("li")
-				newLi.textContent = msg
+            });
+            
+			socket.on('chat message', function(msg, rhymeArray) {
+                var newLi = document.createElement("li")
+                newLi.textContent = msg;
+                document.querySelector('#messages').append(newLi);
+                
+                console.log(rhymeArray)
+                // var rhymeArray = rhymeWords.forEach(function(words) {
+                //     console.log(words)
+                //     newRhymes.textContent = words
+                // })
+                // document.querySelector('#rhymewords').append(rhymeArray)
+                
 
-				document.querySelector('#messages').append(newLi);
+                
+                
 			});
 		})()
     </script>

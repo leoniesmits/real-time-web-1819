@@ -21,8 +21,7 @@ io.on('connection', function(socket){
             SyllaRhyme(function(sr) {
                 var rhymeArray = sr.rhymes(word)
                 console.log(rhymeArray)
-                io.emit('chat message', msg);
-                io.emit('chat message', rhymeArray);
+                io.emit('chat message', msg, rhymeArray);
                 
             })
         })

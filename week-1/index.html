@@ -27,7 +27,7 @@
 			socket.on('chat message', function(msg, rhymeArray) {
                 var newLi = document.createElement("li")
                 newLi.textContent = msg;
-                console.log(msg)
+                console.log(msg, rhymeArray)
                 document.querySelector('#messages').append(newLi);
                                 // var rhymeArray = rhymeWords.forEach(function(words) {
                 //     console.log(words)
